@@ -1,0 +1,214 @@
+{
+  "clientes": [
+    {
+      "idCliente": "C001",
+      "nombre": "Juan Perez",
+      "correo": "juanperez@mail.com",
+      "direccion": "Calle 123",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C002",
+      "nombre": "Maria Gomez",
+      "correo": "maria@mail.com",
+      "direccion": "Carrera 45",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C003",
+      "nombre": "Carlos Ruiz",
+      "correo": "carlos@mail.com",
+      "direccion": "Avenida 9",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C004",
+      "nombre": "Ana Torres",
+      "correo": "ana@mail.com",
+      "direccion": "Calle 8",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C005",
+      "nombre": "Luis Fernández",
+      "correo": "luis@mail.com",
+      "direccion": "Carrera 22",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C006",
+      "nombre": "Paola Ríos",
+      "correo": "paola@mail.com",
+      "direccion": "Calle 60",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C007",
+      "nombre": "Andrés López",
+      "correo": "andres@mail.com",
+      "direccion": "Carrera 33",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C008",
+      "nombre": "Camila Soto",
+      "correo": "camila@mail.com",
+      "direccion": "Diagonal 15",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C009",
+      "nombre": "Felipe Castro",
+      "correo": "felipe@mail.com",
+      "direccion": "Calle 100",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C010",
+      "nombre": "Laura Méndez",
+      "correo": "laura@mail.com",
+      "direccion": "Carrera 5",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C011",
+      "nombre": "Mateo Ramírez",
+      "correo": "mateo@mail.com",
+      "direccion": "Calle 12",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C012",
+      "nombre": "Sara Vargas",
+      "correo": "sara@mail.com",
+      "direccion": "Carrera 7",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C013",
+      "nombre": "David Silva",
+      "correo": "david@mail.com",
+      "direccion": "Calle 20",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C014",
+      "nombre": "Daniela Rincón",
+      "correo": "daniela@mail.com",
+      "direccion": "Carrera 40",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C015",
+      "nombre": "Jorge Martínez",
+      "correo": "jorge@mail.com",
+      "direccion": "Calle 77",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C016",
+      "nombre": "Valentina Ortiz",
+      "correo": "valentina@mail.com",
+      "direccion": "Carrera 19",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C017",
+      "nombre": "Santiago Peña",
+      "correo": "santiago@mail.com",
+      "direccion": "Diagonal 8",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C018",
+      "nombre": "Isabella Mora",
+      "correo": "isabella@mail.com",
+      "direccion": "Calle 30",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C019",
+      "nombre": "Tomás Castillo",
+      "correo": "tomas@mail.com",
+      "direccion": "Carrera 60",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C020",
+      "nombre": "Gabriela León",
+      "correo": "gabriela@mail.com",
+      "direccion": "Calle 14",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C021",
+      "nombre": "Ricardo Moreno",
+      "correo": "ricardo@mail.com",
+      "direccion": "Carrera 21",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C022",
+      "nombre": "Natalia Suárez",
+      "correo": "natalia@mail.com",
+      "direccion": "Calle 90",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C023",
+      "nombre": "Hernán Torres",
+      "correo": "hernan@mail.com",
+      "direccion": "Carrera 12",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C024",
+      "nombre": "Lucía Rodríguez",
+      "correo": "lucia@mail.com",
+      "direccion": "Diagonal 50",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C025",
+      "nombre": "Esteban Gil",
+      "correo": "esteban@mail.com",
+      "direccion": "Calle 25",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C026",
+      "nombre": "Mariana Duarte",
+      "correo": "mariana@mail.com",
+      "direccion": "Carrera 66",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C027",
+      "nombre": "Alejandro Reyes",
+      "correo": "alejandro@mail.com",
+      "direccion": "Calle 3",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C028",
+      "nombre": "Sofía Lozano",
+      "correo": "sofia@mail.com",
+      "direccion": "Carrera 10",
+      "tramite": "Consignar"
+    },
+    {
+      "idCliente": "C029",
+      "nombre": "Miguel Ángel",
+      "correo": "miguel@mail.com",
+      "direccion": "Calle 70",
+      "tramite": "Retirar"
+    },
+    {
+      "idCliente": "C030",
+      "nombre": "Fernanda Pardo",
+      "correo": "fernanda@mail.com",
+      "direccion": "Carrera 15",
+      "tramite": "Consignar"
+    }
+  ]
+}
