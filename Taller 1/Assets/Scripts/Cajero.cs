@@ -12,7 +12,7 @@ public class Cajero : MonoBehaviour
     private bool ocupado = false;
 
     public int NroclientesAtendidos = 0;
-    public float TiempoDeAtencion = 0;
+    public float tiempoDeAtencionTotal = 0;
     public bool ocupado= false; 
 
     //Agregar un cliente a la cola
@@ -38,13 +38,27 @@ public class Cajero : MonoBehaviour
             yield return new WaitForSeconds(tiempoAtencion);
 
             tiempoAtencionTotal += tiempoAtencion;
-            clientesAtendidos++;
+            NroclientesAtendidos++;
             Debug.Log("Cliente atendido: {clienteActual.Nombre}. Total atendidos: {clientesAtendidos}");
 
             ocupado = false;
             ActualizarEstadoUI();
         }
     }
+    private void ActualizarEstadoUI()
+    {
+        if (txtEstado != null)
+        {
+            txtEstado.text = ocupado ? "Ocupado" : "Disponible";
+        }
+    }
+
+    // Obtener estadísticas
+    public string GetEstadisticas()
+    {
+        return $"Clientes atendidos: {clientesAtendidos}, Tiempo total: {tiempoAtencionTotal:F1}s";
+    }
+}
 
 
 }
