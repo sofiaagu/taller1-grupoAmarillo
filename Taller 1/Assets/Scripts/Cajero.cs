@@ -1,62 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEditor.PackageManager;
-using UnityEngine;
+// using System.Collections;
+// using System.Collections.Generic;
+// using TMPro;
+// using UnityEditor.PackageManager;
+// using UnityEngine;
 
-public class Cajero : MonoBehaviour
-{
-    [SerializeField] private TMP_Text txtEstado; // Muestra "Ocupado" o "Disponible"
+// public class Cajero : MonoBehaviour
+// {
+//     [SerializeField] private TMP_Text txtEstado; // Muestra "Ocupado" o "Disponible"
 
-    private Queue<Cliente> colaClientes = new Queue<Cliente>();
-    private bool ocupado = false;
+//     private Queue<Cliente> colaClientes = new Queue<Cliente>();
+//     private bool ocupado = false;
 
-    public int NroclientesAtendidos = 0;
-    public float tiempoDeAtencionTotal = 0;
-    public bool ocupado= false; 
+//     public int NroclientesAtendidos = 0;
+//     public float tiempoDeAtencionTotal = 0;
+//     public bool ocupado= false; 
 
-    //Agregar un cliente a la cola
-    public void EncolarCliente(Cliente cliente)
-    {
-        colaClientes.Enqueue(cliente);
-        if (!ocupado)
-            StartCoroutine(AtenderClientes());
-    }
+//     //Agregar un cliente a la cola
+//     public void EncolarCliente(Cliente cliente)
+//     {
+//         colaClientes.Enqueue(cliente);
+//         if (!ocupado)
+//             StartCoroutine(AtenderClientes());
+//     }
 
-    private IEnumerator AtenderClientes()
-    {
-        while (colaClientes.Count > 0)
-        {
-            ocupado = true;
-            ActualizarEstadoUI();
+//     private IEnumerator AtenderClientes()
+//     {
+//         while (colaClientes.Count > 0)
+//         {
+//             ocupado = true;
+//             ActualizarEstadoUI();
 
-            Cliente clienteActual = colaClientes.Dequeue();
-            float tiempoAtencion = Random.Range(2f, 5f); // tiempo aleatorio de atenci�n
-            Debug.Log($"Atendiendo a {clienteActual.Nombre} durante {tiempoAtencion:F1} segundos...");
+//             Cliente clienteActual = colaClientes.Dequeue();
+//             float tiempoAtencion = Random.Range(2f, 5f); // tiempo aleatorio de atenci�n
+//             Debug.Log($"Atendiendo a {clienteActual.Nombre} durante {tiempoAtencion:F1} segundos...");
 
-            // Espera simulando atenci�n
-            yield return new WaitForSeconds(tiempoAtencion);
+//             // Espera simulando atenci�n
+//             yield return new WaitForSeconds(tiempoAtencion);
 
-            tiempoAtencionTotal += tiempoAtencion;
-            NroclientesAtendidos++;
-            Debug.Log("Cliente atendido: {clienteActual.Nombre}. Total atendidos: {clientesAtendidos}");
+//             tiempoAtencionTotal += tiempoAtencion;
+//             NroclientesAtendidos++;
+//             Debug.Log("Cliente atendido: {clienteActual.Nombre}. Total atendidos: {clientesAtendidos}");
 
-            ocupado = false;
-            ActualizarEstadoUI();
-        }
-    }
-    private void ActualizarEstadoUI()
-    {
-        if (txtEstado != null)
-        {
-            txtEstado.text = ocupado ? "Ocupado" : "Disponible";
-        }
-    }
+//             ocupado = false;
+//             ActualizarEstadoUI();
+//         }
+//     }
+//     private void ActualizarEstadoUI()
+//     {
+//         if (txtEstado != null)
+//         {
+//             txtEstado.text = ocupado ? "Ocupado" : "Disponible";
+//         }
+//     }
 
-    public string GetEstadisticas()
-    {
-        return $"Clientes atendidos: {clientesAtendidos}, Tiempo total: {tiempoAtencionTotal:F1}s";
-    }
-}
+//     public string GetEstadisticas()
+//     {
+//         return $"Clientes atendidos: {clientesAtendidos}, Tiempo total: {tiempoAtencionTotal:F1}s";
+//     }
+// }
 
 

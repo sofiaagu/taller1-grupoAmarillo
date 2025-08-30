@@ -387,7 +387,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 33110435}
         m_TargetAssemblyTypeName: Control, Assembly-CSharp
         m_MethodName: Detener
         m_Mode: 1
@@ -1606,7 +1606,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 33110435}
         m_TargetAssemblyTypeName: Control, Assembly-CSharp
         m_MethodName: GenerarReporte
         m_Mode: 1
@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 33110435}
         m_TargetAssemblyTypeName: Control, Assembly-CSharp
         m_MethodName: Iniciar
         m_Mode: 1
