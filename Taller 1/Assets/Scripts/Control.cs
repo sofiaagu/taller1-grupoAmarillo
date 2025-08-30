@@ -34,4 +34,4 @@ public class Control : MonoBehaviour
     public void GenerarReporte()
     {
     }
-}
+} 
