@@ -1,0 +1,27 @@
+{
+    "clientesEnCola": 11,
+    "totalConsignaciones": 3,
+    "totalRetiros": 5,
+    "cajeros": [
+        {
+            "id": 1,
+            "atendidos": 2,
+            "tiempoTotal": 6.568674087524414
+        },
+        {
+            "id": 2,
+            "atendidos": 2,
+            "tiempoTotal": 7.75801420211792
+        },
+        {
+            "id": 3,
+            "atendidos": 2,
+            "tiempoTotal": 6.810328483581543
+        },
+        {
+            "id": 4,
+            "atendidos": 2,
+            "tiempoTotal": 6.394665718078613
+        }
+    ]
+}

@@ -31,10 +31,10 @@ public class Cajero : MonoBehaviour
             ActualizarEstadoUI();
 
             Cliente clienteActual = colaClientes.Dequeue();
-            float tiempoAtencion = Random.Range(2f, 5f); // tiempo aleatorio de atención
+            float tiempoAtencion = Random.Range(2f, 5f); // tiempo aleatorio de atenciï¿½n
             Debug.Log($"Atendiendo a {clienteActual.Nombre} durante {tiempoAtencion:F1} segundos...");
 
-            // Espera simulando atención
+            // Espera simulando atenciï¿½n
             yield return new WaitForSeconds(tiempoAtencion);
 
             tiempoAtencionTotal += tiempoAtencion;
@@ -53,7 +53,6 @@ public class Cajero : MonoBehaviour
         }
     }
 
-    // Obtener estadísticas
     public string GetEstadisticas()
     {
         return $"Clientes atendidos: {clientesAtendidos}, Tiempo total: {tiempoAtencionTotal:F1}s";
@@ -61,4 +60,3 @@ public class Cajero : MonoBehaviour
 }
 
 
-}
