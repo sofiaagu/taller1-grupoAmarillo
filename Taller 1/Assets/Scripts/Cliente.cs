@@ -21,4 +21,8 @@ public class Cliente : Persona
     {
         return $"[{idCliente}] {nombre} - {tramite} (Tiempo: {tiempoAtencion}s)";
     }
+
+    public  int GenerarTiempoAtencion;
+    
+
 }
