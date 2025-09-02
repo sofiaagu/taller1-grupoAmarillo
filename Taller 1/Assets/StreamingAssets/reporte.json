@@ -1,0 +1,50 @@
+{
+    "clientesEnCola": 0,
+    "totalConsignaciones": 7,
+    "totalRetiros": 8,
+    "cajeros": [
+        {
+            "id": 1,
+            "atendidos": 4,
+            "tiempoTotal": 14.342440605163575,
+            "nombresAtendidos": [
+                "Juan Perez",
+                "Luis Fernández",
+                "Camila Soto",
+                "Mateo Ramírez"
+            ]
+        },
+        {
+            "id": 2,
+            "atendidos": 5,
+            "tiempoTotal": 15.041572570800782,
+            "nombresAtendidos": [
+                "Maria Gomez",
+                "Paola Ríos",
+                "Laura Méndez",
+                "David Silva",
+                "Jorge Martínez"
+            ]
+        },
+        {
+            "id": 3,
+            "atendidos": 3,
+            "tiempoTotal": 11.776740074157715,
+            "nombresAtendidos": [
+                "Carlos Ruiz",
+                "Andrés López",
+                "Sara Vargas"
+            ]
+        },
+        {
+            "id": 4,
+            "atendidos": 3,
+            "tiempoTotal": 10.346393585205079,
+            "nombresAtendidos": [
+                "Ana Torres",
+                "Felipe Castro",
+                "Daniela Rincón"
+            ]
+        }
+    ]
+}

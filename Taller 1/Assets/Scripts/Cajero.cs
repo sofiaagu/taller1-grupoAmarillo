@@ -18,6 +18,7 @@ public class Cajero : MonoBehaviour
 
     private Queue<Cliente> colaClientes = new Queue<Cliente>();
     private List<Cliente> listaClientes; // Lista de clientes cargados desde JSON
+    private List<string>[] nombresAtendidos = new List<string>[4];
     private int clienteIndex = 0; // Para ir trayendo clientes del JSON
 
     private bool[] ocupado = new bool[4];
@@ -33,6 +34,8 @@ public class Cajero : MonoBehaviour
     {
         CargarClientesDesdeJSON(); // agregue Aleja
         ActualizarUI();
+        for (int i = 0; i < nombresAtendidos.Length; i++)
+            nombresAtendidos[i] = new List<string>();
     }
 
     
@@ -55,6 +58,37 @@ public class Cajero : MonoBehaviour
         Debug.Log("Simulación detenida");
     }
 
+    public void GenerarReporte()
+    {
+        Reporte reporte = new Reporte();
+        // Clientes en cola
+        reporte.clientesEnCola = colaClientes.Count;
+
+        // Total consignaciones
+        reporte.totalConsignaciones = consignaciones;
+
+        // Retiros
+        reporte.totalRetiros = retiros;
+
+        // informacion por cajero
+        reporte.cajeros = new List<Reporte.CajeroInfo>();
+        for (int i = 0; i < 4; i++)
+        {
+            Reporte.CajeroInfo info = new Reporte.CajeroInfo();
+            info.id = i + 1;
+            info.atendidos = atendidos[i];      // Atendidos
+            info.tiempoTotal = tiempoTotal[i];  // TiempoTotal
+            info.nombresAtendidos = nombresAtendidos[i];
+            reporte.cajeros.Add(info);
+
+        }
+
+        // Convertir a JSON y guardar archivo
+        string json = JsonUtility.ToJson(reporte, true);
+        string path = Path.Combine(Application.streamingAssetsPath, "reporte.json");
+        File.WriteAllText(path, json);
+        Debug.Log("Reporte generado en: " + path);
+    }
 
     //public void GenerarReporte()
     //{
@@ -107,7 +141,7 @@ public class Cajero : MonoBehaviour
     //        yield return new WaitForSeconds(1f);
     //    }
     //}
- 
+
 
     private void CargarClientesDesdeJSON()
     {
@@ -184,6 +218,7 @@ public class Cajero : MonoBehaviour
 
         atendidos[cajero]++;
         tiempoTotal[cajero] += tiempoAtencion;
+        nombresAtendidos[cajero].Add(cliente.nombre);
 
         // Contar trámites SOLO cuando fueron atendidos
         if (cliente.tramite == "Consignar")
@@ -225,6 +260,11 @@ public class Cajero : MonoBehaviour
     }
 }
 
+
+
+
+
+
 [System.Serializable]
 public class Reporte
 {
@@ -233,12 +273,14 @@ public class Reporte
     public int totalRetiros;
     public List<CajeroInfo> cajeros;
 
+
     [System.Serializable]
     public class CajeroInfo
     {
         public int id;
         public int atendidos;
         public float tiempoTotal;
+        public List<string> nombresAtendidos;
     }
 }
 
