@@ -26,8 +26,8 @@ public class Cajero : MonoBehaviour
     private float[] tiempoTotal = new float[4];
 
     private bool enMarcha = false;
-    private int consignaciones = 0; 
-    private int retiros = 0; 
+    private int consignaciones = 0;
+    private int retiros = 0;
     //private int idCounter = 1;
 
     void Start()
@@ -38,7 +38,7 @@ public class Cajero : MonoBehaviour
             nombresAtendidos[i] = new List<string>();
     }
 
-    
+
     public void Iniciar()
     {
         StopAllCoroutines();
@@ -229,7 +229,7 @@ public class Cajero : MonoBehaviour
         ocupado[cajero] = false;
         ActualizarUI();
     }
-   
+
     private int BuscarCajeroDisponible()
     {
         for (int i = 0; i < 4; i++)
@@ -247,6 +247,10 @@ public class Cajero : MonoBehaviour
         if (cajero4 != null) cajero4.text = "Cajero 4\n" + (ocupado[3] ? "Ocupado" : "Libre");
 
         //if (clientes != null) clientes.text = "Clientes en cola: " + colaClientes.Count;
+        ActualizarEstado(0, cajero1);
+        ActualizarEstado(1, cajero2);
+        ActualizarEstado(2, cajero3);
+        ActualizarEstado(3, cajero4);
 
         if (clientes != null)// agregue Aleja
         {
@@ -258,48 +262,90 @@ public class Cajero : MonoBehaviour
             clientes.text = lista;
         }
     }
-}
+     private void ActualizarEstado(int index, TMP_Text tmp)
+    {
+        if (tmp == null) return;
+
+        if (ocupado[index])
+        {
+            tmp.text = $"Cajero {index + 1}\nOcupado";
+            tmp.color = Color.red;   // 🔴 rojo si ocupado
+        }
+        else
+        {
+            tmp.text = $"Cajero {index + 1}\nLibre";
+            tmp.color = Color.green; // 🟢 verde si libre
+        }
+    }
+
+    //    private void ActualizarEstado(int index)
+    //{
+    //    TMP_Text tmp = null;
+
+    //    switch (index)
+    //    {
+    //        case 0: tmp = cajero1; break;
+    //        case 1: tmp = cajero2; break;
+    //        case 2: tmp = cajero3; break;
+    //        case 3: tmp = cajero4; break;
+    //    }
+
+    //    if (tmp != null)
+    //    {
+    //        if (!ocupado[index])
+    //        {
+    //            tmp.text = $"Cajero {index + 1}\nLibre";
+    //            tmp.color = Color.green;
+    //        }
+    //        else
+    //        {
+    //            tmp.text = $"Cajero {index + 1}\nOcupado";
+    //            tmp.color = Color.red;
+    //        }
+    //    }
+    //}
 
 
 
 
-
-
-[System.Serializable]
-public class Reporte
-{
-    public int clientesEnCola;
-    public int totalConsignaciones;
-    public int totalRetiros;
-    public List<CajeroInfo> cajeros;
 
 
     [System.Serializable]
-    public class CajeroInfo
+    public class Reporte
     {
-        public int id;
-        public int atendidos;
-        public float tiempoTotal;
-        public List<string> nombresAtendidos;
+        public int clientesEnCola;
+        public int totalConsignaciones;
+        public int totalRetiros;
+        public List<CajeroInfo> cajeros;
+
+
+        [System.Serializable]
+        public class CajeroInfo
+        {
+            public int id;
+            public int atendidos;
+            public float tiempoTotal;
+            public List<string> nombresAtendidos;
+        }
     }
-}
 
-// agregue Aleja
-[System.Serializable]
-public class Cliente
-{
-    public string idCliente;
-    public string nombre;
-    public string correo;
-    public string direccion;
-    public string tramite;
-    [System.NonSerialized] public float tiempoAtencion; // agregado dinámicamente
-}
+    // agregue Aleja
+    [System.Serializable]
+    public class Cliente
+    {
+        public string idCliente;
+        public string nombre;
+        public string correo;
+        public string direccion;
+        public string tramite;
+        [System.NonSerialized] public float tiempoAtencion; // agregado dinámicamente
+    }
 
-[System.Serializable]
-public class ClientesData
-{
-    public List<Cliente> clientes;
+    [System.Serializable]
+    public class ClientesData
+    {
+        public List<Cliente> clientes;
+    }
 }
 
 
