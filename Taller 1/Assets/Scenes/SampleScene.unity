@@ -160,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 33110433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb4b428679db6c5438b92286f7bf0dae, type: 3}
+  m_Script: {fileID: 11500000, guid: 3306c968ae14abc49a8d61954ab2d0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cajero1: {fileID: 1307246450}
