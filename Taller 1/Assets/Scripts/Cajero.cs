@@ -20,6 +20,7 @@ public class Cajero : MonoBehaviour
     private List<Cliente> listaClientes; // Lista de clientes cargados desde JSON
     private List<string>[] nombresAtendidos = new List<string>[4];
     private int clienteIndex = 0; // Para ir trayendo clientes del JSON
+    private int contadorClientes = 1;
 
     private bool[] ocupado = new bool[4];
     private int[] atendidos = new int[4];
@@ -164,17 +165,59 @@ public class Cajero : MonoBehaviour
     {
         Debug.Log("Coroutine GenerarClientesDesdeArchivo iniciada");
 
-        while (enMarcha && clienteIndex < listaClientes.Count)
-        {
-            // Agregar un cliente en orden desde la lista
-            Cliente nuevo = listaClientes[clienteIndex];
-            nuevo.tiempoAtencion = Random.Range(2f, 5f); // asignamos tiempo aleatorio
-            colaClientes.Enqueue(nuevo);
-            clienteIndex++;
+        Debug.Log("Coroutine GenerarClientesDesdeArchivo iniciada");
 
-            ActualizarUI();
-            yield return new WaitForSeconds(1f);
+    while (enMarcha)
+    {
+        // Generar entre 1 y 3 clientes cada segundo
+        int cantidad = Random.Range(1, 4);
+
+        for (int i = 0; i < cantidad; i++)
+        {
+            // Selecciona un cliente aleatorio de la lista original
+            Cliente baseCliente = listaClientes[Random.Range(0, listaClientes.Count)];
+
+            // Crear una copia del cliente con nuevo ID y tiempo aleatorio
+            Cliente nuevo = new Cliente(
+                baseCliente.nombre,
+                baseCliente.correo,
+                baseCliente.direccion,
+                baseCliente.tramite,
+                Random.Range(2f, 5f) // tiempo de atención aleatorio
+            );
+
+            // Asignar un ID secuencial único
+            contadorClientes++;
+            nuevo.idCliente = "C" + contadorClientes.ToString("00");
+
+            // Encolar
+            colaClientes.Enqueue(nuevo);
         }
+
+        ActualizarUI();
+        yield return new WaitForSeconds(1f);
+    }
+
+        //while (enMarcha && clienteIndex < listaClientes.Count)
+        //{
+        //    int cantidad = Random.Range(1, 4); // 1 a 3
+
+        //for (int i = 0; i < cantidad && clienteIndex < listaClientes.Count; i++)
+        //{
+        //    Cliente nuevo = listaClientes[clienteIndex];
+        //    nuevo.tiempoAtencion = Random.Range(2f, 5f); // tiempo aleatorio
+
+        //    // Asignar número de cliente (C01, C02, ...)
+        //    nuevo.idCliente = $"C{contadorClientes:00}";
+        //    contadorClientes++;
+
+        //    colaClientes.Enqueue(nuevo);
+        //    clienteIndex++;
+        //}
+
+        //    ActualizarUI();
+        //    yield return new WaitForSeconds(0.5f);
+        //}
     } // agregue Aleja
 
     private IEnumerator EnviarClientes()
@@ -195,14 +238,14 @@ public class Cajero : MonoBehaviour
                 }
                 else
                 {
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(1.0f);
                     continue;
                 }
 
                 ActualizarUI();
             }
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.0f);
         }
     }
 

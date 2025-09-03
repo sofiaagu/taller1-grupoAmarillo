@@ -53,3 +53,4 @@ namespace cliente
         public int GenerarTiempoAtencion;
     }
 }
+   

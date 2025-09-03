@@ -1,54 +1,56 @@
 {
     "clientesEnCola": 0,
-    "totalConsignaciones": 14,
-    "totalRetiros": 14,
+    "totalConsignaciones": 15,
+    "totalRetiros": 15,
     "cajeros": [
         {
             "id": 1,
             "atendidos": 8,
-            "tiempoTotal": 28.552074432373048,
+            "tiempoTotal": 30.015302658081056,
             "nombresAtendidos": [
                 "Juan Perez",
-                "Luis Fernández",
-                "Camila Soto",
-                "Sara Vargas",
-                "Jorge Martínez",
-                "Tomás Castillo",
+                "Paola Ríos",
+                "Laura Méndez",
+                "David Silva",
+                "Santiago Peña",
+                "Gabriela León",
                 "Hernán Torres",
                 "Alejandro Reyes"
             ]
         },
         {
             "id": 2,
-            "atendidos": 7,
-            "tiempoTotal": 23.682937622070314,
+            "atendidos": 9,
+            "tiempoTotal": 28.441797256469728,
             "nombresAtendidos": [
                 "Maria Gomez",
-                "Paola Ríos",
+                "Luis Fernández",
                 "Felipe Castro",
-                "David Silva",
-                "Santiago Peña",
-                "Gabriela León",
-                "Lucía Rodríguez"
+                "Sara Vargas",
+                "Jorge Martínez",
+                "Isabella Mora",
+                "Natalia Suárez",
+                "Mariana Duarte",
+                "Miguel Ángel"
             ]
         },
         {
             "id": 3,
             "atendidos": 6,
-            "tiempoTotal": 24.01993751525879,
+            "tiempoTotal": 27.001689910888673,
             "nombresAtendidos": [
                 "Carlos Ruiz",
-                "Laura Méndez",
+                "Camila Soto",
                 "Daniela Rincón",
-                "Isabella Mora",
-                "Natalia Suárez",
-                "Mariana Duarte"
+                "Tomás Castillo",
+                "Lucía Rodríguez",
+                "Fernanda Pardo"
             ]
         },
         {
             "id": 4,
             "atendidos": 7,
-            "tiempoTotal": 23.837051391601564,
+            "tiempoTotal": 20.623271942138673,
             "nombresAtendidos": [
                 "Ana Torres",
                 "Andrés López",
