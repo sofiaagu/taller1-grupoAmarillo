@@ -92,19 +92,38 @@ public class Cajero : MonoBehaviour
     private void CargarClientesDesdeJSON()
     {
         string path = Path.Combine(Application.streamingAssetsPath, "Clientes.json");
+        Debug.Log("Buscando archivo en: " + path);
 
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
+            if (string.IsNullOrEmpty(json))
+            {
+                Debug.LogError("El archivo Clientes.json está vacío");
+                return;
+            }
+
             ClientesData data = JsonUtility.FromJson<ClientesData>(json);
-            listaClientes = new List<Cliente>(data.clientes);
+            if (data == null || data.clientes == null)
+            {
+                Debug.LogError("El JSON no coincide con la estructura de ClientesData");
+                return;
+            }
+
+            listaClientes = new List<Cliente>();
+            foreach (var c in data.clientes)
+            {
+                Cliente nuevo = new Cliente(c.nombre, c.correo, c.direccion, c.tramite, 0f);
+                listaClientes.Add(nuevo);
+            }
+
             Debug.Log("Clientes cargados: " + listaClientes.Count);
         }
         else
         {
-            Debug.LogError("No se encontró el archivo de clientes en: " + path);
+            Debug.LogError("No se encontró Clientes.json en StreamingAssets");
         }
-    } // agregue Aleja
+    }
 
     private IEnumerator GenerarClientesDesdeArchivo()
     {
@@ -249,6 +268,7 @@ public class Cajero : MonoBehaviour
 
 
 
+}
 
 
     [System.Serializable]
@@ -270,10 +290,18 @@ public class Cajero : MonoBehaviour
         }
     }
 
-
-    [System.Serializable]
-    public class ClientesData
-    {
-        public List<Cliente> clientes;
-    }
+[System.Serializable]
+public class ClienteData
+{
+    public string nombre;
+    public string correo;
+    public string direccion;
+    public string tramite;
 }
+
+[System.Serializable]
+public class ClientesData
+{
+    public List<ClienteData> clientes;
+}
+
