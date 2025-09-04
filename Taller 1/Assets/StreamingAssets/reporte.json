@@ -1,31 +1,82 @@
 {
-    "clientesEnCola": 0,
-    "totalConsignaciones": 0,
-    "totalRetiros": 0,
+    "clientesEnCola": 53,
+    "totalConsignaciones": 22,
+    "totalRetiros": 25,
     "cajeros": [
         {
             "id": 1,
-            "atendidos": 0,
-            "tiempoTotal": 0.0,
-            "nombresAtendidos": []
+            "atendidos": 14,
+            "tiempoTotal": 43.63688278198242,
+            "nombresAtendidos": [
+                "Luis Fernández",
+                "Maria Gomez",
+                "Santiago Peña",
+                "Sara Vargas",
+                "Maria Gomez",
+                "Carlos Ruiz",
+                "Andrés López",
+                "Isabella Mora",
+                "Valentina Ortiz",
+                "Jorge Martínez",
+                "Sofía Lozano",
+                "Mateo Ramírez",
+                "Gabriela León",
+                "Jorge Martínez"
+            ]
         },
         {
             "id": 2,
-            "atendidos": 0,
-            "tiempoTotal": 0.0,
-            "nombresAtendidos": []
+            "atendidos": 12,
+            "tiempoTotal": 41.36713790893555,
+            "nombresAtendidos": [
+                "Juan Perez",
+                "Ana Torres",
+                "Juan Perez",
+                "Gabriela León",
+                "Miguel Ángel",
+                "Hernán Torres",
+                "Luis Fernández",
+                "Alejandro Reyes",
+                "Fernanda Pardo",
+                "Mateo Ramírez",
+                "Mateo Ramírez",
+                "Ana Torres"
+            ]
         },
         {
             "id": 3,
-            "atendidos": 0,
-            "tiempoTotal": 0.0,
-            "nombresAtendidos": []
+            "atendidos": 12,
+            "tiempoTotal": 40.21770095825195,
+            "nombresAtendidos": [
+                "Natalia Suárez",
+                "Gabriela León",
+                "Valentina Ortiz",
+                "Fernanda Pardo",
+                "Natalia Suárez",
+                "Fernanda Pardo",
+                "Carlos Ruiz",
+                "Carlos Ruiz",
+                "Felipe Castro",
+                "Sofía Lozano",
+                "Felipe Castro",
+                "Ricardo Moreno"
+            ]
         },
         {
             "id": 4,
-            "atendidos": 0,
-            "tiempoTotal": 0.0,
-            "nombresAtendidos": []
+            "atendidos": 9,
+            "tiempoTotal": 30.190837860107423,
+            "nombresAtendidos": [
+                "Juan Perez",
+                "Andrés López",
+                "Gabriela León",
+                "Natalia Suárez",
+                "Jorge Martínez",
+                "Laura Méndez",
+                "Santiago Peña",
+                "Luis Fernández",
+                "Isabella Mora"
+            ]
         }
     ]
 }
