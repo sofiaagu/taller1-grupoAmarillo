@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using System.IO;
-
+using cliente;
 
 public class Cajero : MonoBehaviour
 {
@@ -17,9 +17,9 @@ public class Cajero : MonoBehaviour
     public TMP_Text clientes;
 
     private Queue<Cliente> colaClientes = new Queue<Cliente>();
-    private List<Cliente> listaClientes; // Lista de clientes cargados desde JSON
+    private List<Cliente> listaClientes; 
     private List<string>[] nombresAtendidos = new List<string>[4];
-    private int clienteIndex = 0; // Para ir trayendo clientes del JSON
+    private int clienteIndex = 0; 
     private int contadorClientes = 1;
 
     private bool[] ocupado = new bool[4];
@@ -29,7 +29,6 @@ public class Cajero : MonoBehaviour
     private bool enMarcha = false;
     private int consignaciones = 0;
     private int retiros = 0;
-    //private int idCounter = 1;
 
     void Start()
     {
@@ -44,11 +43,8 @@ public class Cajero : MonoBehaviour
     {
         StopAllCoroutines();
         enMarcha = true;
-
-        Debug.Log("Simulación iniciada");
-
-        // StartCoroutine(GenerarClientes());
-        StartCoroutine(GenerarClientesDesdeArchivo()); // Cambie Aleja
+        
+        StartCoroutine(GenerarClientesDesdeArchivo()); 
         StartCoroutine(EnviarClientes());
     }
 
@@ -56,7 +52,7 @@ public class Cajero : MonoBehaviour
     {
         enMarcha = false;
         StopAllCoroutines();
-        Debug.Log("Simulación detenida");
+      
     }
 
     public void GenerarReporte()
@@ -88,60 +84,9 @@ public class Cajero : MonoBehaviour
         string json = JsonUtility.ToJson(reporte, true);
         string path = Path.Combine(Application.streamingAssetsPath, "reporte.json");
         File.WriteAllText(path, json);
-        Debug.Log("Reporte generado en: " + path);
+        
     }
 
-    //public void GenerarReporte()
-    //{
-    //    Reporte reporte = new Reporte();
-    //    reporte.clientesEnCola = colaClientes.Count;
-    //    reporte.cajeros = new List<Reporte.CajeroInfo>();
-    //    reporte.totalConsignaciones = consignaciones;
-    //    reporte.totalRetiros = retiros;
-
-    //    for (int i = 0; i < 4; i++)
-    //    {
-    //        Reporte.CajeroInfo info = new Reporte.CajeroInfo();
-    //        info.id = i + 1;
-    //        info.atendidos = atendidos[i];
-    //        info.tiempoTotal = tiempoTotal[i];
-    //        reporte.cajeros.Add(info);
-    //    }
-
-    //    string json = JsonUtility.ToJson(reporte, true);
-    //    File.WriteAllText(Application.dataPath + "/reporte.json", json);
-
-    //    Debug.Log("Reporte generado en: " + Application.dataPath + "/reporte.json");
-    //}
-
-    //private IEnumerator GenerarClientes()
-    //{
-    //    Debug.Log("Coroutine GenerarClientes iniciada");
-
-    //    while (enMarcha)
-    //    {
-    //        int cantidad = Random.Range(1, 4); // entre 1 y 3 clientes
-    //        Debug.Log("Generando " + cantidad + " clientes");
-
-    //        for (int i = 0; i < cantidad; i++)
-    //        {
-    //            string nombre = "Cliente " + idCounter;
-    //            string correo = "cliente" + idCounter + "@mail.com";
-    //            string direccion = "Calle " + Random.Range(1, 50);
-    //            string tramite = Random.value > 0.5f ? "Consignar" : "Retirar";
-    //            float tiempoAtencion = Random.Range(2f, 5f);
-
-    //            Cliente nuevo = new Cliente(nombre, correo, direccion, tramite, tiempoAtencion);
-    //            nuevo.idCliente = "C" + idCounter;
-
-    //            colaClientes.Enqueue(nuevo);
-    //            idCounter++;
-    //        }
-
-    //        ActualizarUI();
-    //        yield return new WaitForSeconds(1f);
-    //    }
-    //}
 
 
     private void CargarClientesDesdeJSON()
@@ -198,26 +143,7 @@ public class Cajero : MonoBehaviour
         yield return new WaitForSeconds(1f);
     }
 
-        //while (enMarcha && clienteIndex < listaClientes.Count)
-        //{
-        //    int cantidad = Random.Range(1, 4); // 1 a 3
-
-        //for (int i = 0; i < cantidad && clienteIndex < listaClientes.Count; i++)
-        //{
-        //    Cliente nuevo = listaClientes[clienteIndex];
-        //    nuevo.tiempoAtencion = Random.Range(2f, 5f); // tiempo aleatorio
-
-        //    // Asignar número de cliente (C01, C02, ...)
-        //    nuevo.idCliente = $"C{contadorClientes:00}";
-        //    contadorClientes++;
-
-        //    colaClientes.Enqueue(nuevo);
-        //    clienteIndex++;
-        //}
-
-        //    ActualizarUI();
-        //    yield return new WaitForSeconds(0.5f);
-        //}
+        
     } // agregue Aleja
 
     private IEnumerator EnviarClientes()
@@ -321,34 +247,6 @@ public class Cajero : MonoBehaviour
         }
     }
 
-    //    private void ActualizarEstado(int index)
-    //{
-    //    TMP_Text tmp = null;
-
-    //    switch (index)
-    //    {
-    //        case 0: tmp = cajero1; break;
-    //        case 1: tmp = cajero2; break;
-    //        case 2: tmp = cajero3; break;
-    //        case 3: tmp = cajero4; break;
-    //    }
-
-    //    if (tmp != null)
-    //    {
-    //        if (!ocupado[index])
-    //        {
-    //            tmp.text = $"Cajero {index + 1}\nLibre";
-    //            tmp.color = Color.green;
-    //        }
-    //        else
-    //        {
-    //            tmp.text = $"Cajero {index + 1}\nOcupado";
-    //            tmp.color = Color.red;
-    //        }
-    //    }
-    //}
-
-
 
 
 
@@ -372,17 +270,6 @@ public class Cajero : MonoBehaviour
         }
     }
 
-    // agregue Aleja
-    [System.Serializable]
-    public class Cliente
-    {
-        public string idCliente;
-        public string nombre;
-        public string correo;
-        public string direccion;
-        public string tramite;
-        [System.NonSerialized] public float tiempoAtencion; // agregado dinámicamente
-    }
 
     [System.Serializable]
     public class ClientesData
@@ -390,67 +277,3 @@ public class Cajero : MonoBehaviour
         public List<Cliente> clientes;
     }
 }
-
-
-// using System.Collections;
-// using System.Collections.Generic;
-// using TMPro;
-// using UnityEditor.PackageManager;
-// using UnityEngine;
-
-// public class Cajero : MonoBehaviour
-// {
-//     [SerializeField] private TMP_Text txtEstado; // Muestra "Ocupado" o "Disponible"
-
-//     private Queue<Cliente> colaClientes = new Queue<Cliente>();
-//     private bool ocupado = false;
-
-//     public int NroclientesAtendidos = 0;
-//     public float tiempoDeAtencionTotal = 0;
-//     public bool ocupado= false; 
-
-//     //Agregar un cliente a la cola
-//     public void EncolarCliente(Cliente cliente)
-//     {
-//         colaClientes.Enqueue(cliente);
-//         if (!ocupado)
-//             StartCoroutine(AtenderClientes());
-//     }
-
-//     private IEnumerator AtenderClientes()
-//     {
-//         while (colaClientes.Count > 0)
-//         {
-//             ocupado = true;
-//             ActualizarEstadoUI();
-
-//             Cliente clienteActual = colaClientes.Dequeue();
-//             float tiempoAtencion = Random.Range(2f, 5f); // tiempo aleatorio de atenci�n
-//             Debug.Log($"Atendiendo a {clienteActual.Nombre} durante {tiempoAtencion:F1} segundos...");
-
-//             // Espera simulando atenci�n
-//             yield return new WaitForSeconds(tiempoAtencion);
-
-//             tiempoAtencionTotal += tiempoAtencion;
-//             NroclientesAtendidos++;
-//             Debug.Log("Cliente atendido: {clienteActual.Nombre}. Total atendidos: {clientesAtendidos}");
-
-//             ocupado = false;
-//             ActualizarEstadoUI();
-//         }
-//     }
-//     private void ActualizarEstadoUI()
-//     {
-//         if (txtEstado != null)
-//         {
-//             txtEstado.text = ocupado ? "Ocupado" : "Disponible";
-//         }
-//     }
-
-//     public string GetEstadisticas()
-//     {
-//         return $"Clientes atendidos: {clientesAtendidos}, Tiempo total: {tiempoAtencionTotal:F1}s";
-//     }
-// }
-
-

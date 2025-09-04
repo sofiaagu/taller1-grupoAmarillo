@@ -19,11 +19,7 @@ namespace cliente
             this.tiempoAtencion = tiempoAtencion;
         }
 
-        public override string ToString()
-        {
-            return $"[{idCliente}] {nombre} - {tramite} (Tiempo: {tiempoAtencion}s)";
-        }
-
+       
         public int GenerarTiempoAtencion;
 
 
