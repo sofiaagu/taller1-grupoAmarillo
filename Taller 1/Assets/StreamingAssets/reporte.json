@@ -1,65 +1,31 @@
 {
     "clientesEnCola": 0,
-    "totalConsignaciones": 15,
-    "totalRetiros": 15,
+    "totalConsignaciones": 0,
+    "totalRetiros": 0,
     "cajeros": [
         {
             "id": 1,
-            "atendidos": 8,
-            "tiempoTotal": 30.015302658081056,
-            "nombresAtendidos": [
-                "Juan Perez",
-                "Paola Ríos",
-                "Laura Méndez",
-                "David Silva",
-                "Santiago Peña",
-                "Gabriela León",
-                "Hernán Torres",
-                "Alejandro Reyes"
-            ]
+            "atendidos": 0,
+            "tiempoTotal": 0.0,
+            "nombresAtendidos": []
         },
         {
             "id": 2,
-            "atendidos": 9,
-            "tiempoTotal": 28.441797256469728,
-            "nombresAtendidos": [
-                "Maria Gomez",
-                "Luis Fernández",
-                "Felipe Castro",
-                "Sara Vargas",
-                "Jorge Martínez",
-                "Isabella Mora",
-                "Natalia Suárez",
-                "Mariana Duarte",
-                "Miguel Ángel"
-            ]
+            "atendidos": 0,
+            "tiempoTotal": 0.0,
+            "nombresAtendidos": []
         },
         {
             "id": 3,
-            "atendidos": 6,
-            "tiempoTotal": 27.001689910888673,
-            "nombresAtendidos": [
-                "Carlos Ruiz",
-                "Camila Soto",
-                "Daniela Rincón",
-                "Tomás Castillo",
-                "Lucía Rodríguez",
-                "Fernanda Pardo"
-            ]
+            "atendidos": 0,
+            "tiempoTotal": 0.0,
+            "nombresAtendidos": []
         },
         {
             "id": 4,
-            "atendidos": 7,
-            "tiempoTotal": 20.623271942138673,
-            "nombresAtendidos": [
-                "Ana Torres",
-                "Andrés López",
-                "Mateo Ramírez",
-                "Valentina Ortiz",
-                "Ricardo Moreno",
-                "Esteban Gil",
-                "Sofía Lozano"
-            ]
+            "atendidos": 0,
+            "tiempoTotal": 0.0,
+            "nombresAtendidos": []
         }
     ]
 }
