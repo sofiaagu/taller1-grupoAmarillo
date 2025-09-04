@@ -32,7 +32,7 @@ public class Cajero : MonoBehaviour
 
     void Start()
     {
-        CargarClientesDesdeJSON(); // agregue Aleja
+        CargarClientesDesdeJSON(); 
         ActualizarUI();
         for (int i = 0; i < nombresAtendidos.Length; i++)
             nombresAtendidos[i] = new List<string>();
@@ -52,7 +52,9 @@ public class Cajero : MonoBehaviour
     {
         enMarcha = false;
         StopAllCoroutines();
-      
+
+        Debug.Log("La simulación se detuvo correctamente.");
+
     }
 
     public void GenerarReporte()
@@ -84,7 +86,9 @@ public class Cajero : MonoBehaviour
         string json = JsonUtility.ToJson(reporte, true);
         string path = Path.Combine(Application.streamingAssetsPath, "reporte.json");
         File.WriteAllText(path, json);
-        
+
+        Debug.Log("Reporte generado en StreamingAssets: " + path);
+
     }
 
 
@@ -163,7 +167,7 @@ public class Cajero : MonoBehaviour
     }
 
         
-    } // agregue Aleja
+    } 
 
     private IEnumerator EnviarClientes()
     {
@@ -234,13 +238,12 @@ public class Cajero : MonoBehaviour
         if (cajero3 != null) cajero3.text = "Cajero 3\n" + (ocupado[2] ? "Ocupado" : "Libre");
         if (cajero4 != null) cajero4.text = "Cajero 4\n" + (ocupado[3] ? "Ocupado" : "Libre");
 
-        //if (clientes != null) clientes.text = "Clientes en cola: " + colaClientes.Count;
         ActualizarEstado(0, cajero1);
         ActualizarEstado(1, cajero2);
         ActualizarEstado(2, cajero3);
         ActualizarEstado(3, cajero4);
 
-        if (clientes != null)// agregue Aleja
+        if (clientes != null)
         {
             string lista = "Clientes en cola:\n";
             foreach (var c in colaClientes)
