@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Persona : MonoBehaviour
+public class Persona
 {
     public string nombre { get; set; }
     public string correo { get; set; }

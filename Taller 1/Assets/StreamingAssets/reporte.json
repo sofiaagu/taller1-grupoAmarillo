@@ -1,64 +1,53 @@
 {
-    "clientesEnCola": 0,
-    "totalConsignaciones": 15,
-    "totalRetiros": 15,
+    "clientesEnCola": 22,
+    "totalConsignaciones": 6,
+    "totalRetiros": 13,
     "cajeros": [
         {
             "id": 1,
-            "atendidos": 8,
-            "tiempoTotal": 30.015302658081056,
+            "atendidos": 6,
+            "tiempoTotal": 20.496299743652345,
             "nombresAtendidos": [
-                "Juan Perez",
-                "Paola Ríos",
-                "Laura Méndez",
-                "David Silva",
-                "Santiago Peña",
-                "Gabriela León",
                 "Hernán Torres",
-                "Alejandro Reyes"
+                "Miguel Ángel",
+                "Ricardo Moreno",
+                "Santiago Peña",
+                "Hernán Torres",
+                "Andrés López"
             ]
         },
         {
             "id": 2,
-            "atendidos": 9,
-            "tiempoTotal": 28.441797256469728,
+            "atendidos": 5,
+            "tiempoTotal": 15.638771057128907,
             "nombresAtendidos": [
-                "Maria Gomez",
-                "Luis Fernández",
-                "Felipe Castro",
-                "Sara Vargas",
-                "Jorge Martínez",
-                "Isabella Mora",
-                "Natalia Suárez",
-                "Mariana Duarte",
-                "Miguel Ángel"
+                "Santiago Peña",
+                "Laura Méndez",
+                "Juan Perez",
+                "Juan Perez",
+                "Juan Perez"
             ]
         },
         {
             "id": 3,
-            "atendidos": 6,
-            "tiempoTotal": 27.001689910888673,
+            "atendidos": 4,
+            "tiempoTotal": 13.517257690429688,
             "nombresAtendidos": [
-                "Carlos Ruiz",
-                "Camila Soto",
-                "Daniela Rincón",
-                "Tomás Castillo",
                 "Lucía Rodríguez",
-                "Fernanda Pardo"
+                "Felipe Castro",
+                "Daniela Rincón",
+                "Valentina Ortiz"
             ]
         },
         {
             "id": 4,
-            "atendidos": 7,
-            "tiempoTotal": 20.623271942138673,
+            "atendidos": 4,
+            "tiempoTotal": 13.252832412719727,
             "nombresAtendidos": [
-                "Ana Torres",
-                "Andrés López",
-                "Mateo Ramírez",
-                "Valentina Ortiz",
-                "Ricardo Moreno",
                 "Esteban Gil",
-                "Sofía Lozano"
+                "Mateo Ramírez",
+                "Ana Torres",
+                "Sara Vargas"
             ]
         }
     ]
