@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using System.IO;
 using cliente;
+using UnityEngine.UI;
 
 public class Cajero : MonoBehaviour
 {
@@ -16,7 +17,15 @@ public class Cajero : MonoBehaviour
     [Header("UI Clientes")]
     public TMP_Text clientes;
 
+    [Header("UI Clientes - Área de Imágenes")]
+    public Transform clientesImageContainer;
+    public TMP_Text clientesCountText;
+
+    [Header("Imágenes de Clientes")]
+    public Texture2D[] clienteImages;
+
     private Queue<Cliente> colaClientes = new Queue<Cliente>();
+    private Queue<RawImage> colaImagenes = new Queue<RawImage>();
     private List<Cliente> listaClientes; 
     private List<string>[] nombresAtendidos = new List<string>[4];
     private int clienteIndex = 0; 
@@ -36,6 +45,7 @@ public class Cajero : MonoBehaviour
         ActualizarUI();
         for (int i = 0; i < nombresAtendidos.Length; i++)
             nombresAtendidos[i] = new List<string>();
+        
     }
 
 
@@ -160,14 +170,40 @@ public class Cajero : MonoBehaviour
 
             // Encolar
             colaClientes.Enqueue(nuevo);
-        }
+
+            //Encolar Img
+            RawImage imagen = CrearImagenCliente(nuevo);
+            colaImagenes.Enqueue(imagen);
+
+
+            }
 
         ActualizarUI();
         yield return new WaitForSeconds(1f);
     }
 
         
-    } 
+    }
+    private RawImage CrearImagenCliente(Cliente cliente)
+    {
+        if (clientesImageContainer == null) return null;
+
+        GameObject imageObj = new GameObject("ClienteImage_" + cliente.idCliente);
+        imageObj.transform.SetParent(clientesImageContainer);
+
+        RawImage rawImage = imageObj.AddComponent<RawImage>();
+
+        if (clienteImages != null && clienteImages.Length > 0)
+        {
+            rawImage.texture = clienteImages[Random.Range(0, clienteImages.Length)];
+        }
+
+        LayoutElement layoutElement = imageObj.AddComponent<LayoutElement>();
+        layoutElement.preferredWidth = 60;  // Ancho deseado
+        layoutElement.preferredHeight = 60; // Alto deseado
+
+        return rawImage; //Retorna la imagen
+    }
 
     private IEnumerator EnviarClientes()
     {
@@ -183,6 +219,17 @@ public class Cajero : MonoBehaviour
                 if (indice != -1)
                 {
                     colaClientes.Dequeue();
+
+                    // Remover la imagen correspondiente
+                    if (colaImagenes.Count > 0)
+                    {
+                        RawImage imagenARemover = colaImagenes.Dequeue();
+                        if (imagenARemover != null)
+                        {
+                            Destroy(imagenARemover.gameObject);
+                        }
+                    }
+
                     StartCoroutine(AtenderCliente(indice, cliente));
                 }
                 else
@@ -242,6 +289,11 @@ public class Cajero : MonoBehaviour
         ActualizarEstado(1, cajero2);
         ActualizarEstado(2, cajero3);
         ActualizarEstado(3, cajero4);
+
+        if (clientesCountText != null)
+        {
+            clientesCountText.text = $"Clientes en cola: {colaImagenes.Count}";
+        }
 
         if (clientes != null)
         {

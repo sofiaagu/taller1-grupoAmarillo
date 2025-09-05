@@ -1,31 +1,51 @@
 {
-    "clientesEnCola": 4,
-    "totalConsignaciones": 0,
-    "totalRetiros": 0,
+    "clientesEnCola": 17,
+    "totalConsignaciones": 7,
+    "totalRetiros": 9,
     "cajeros": [
         {
             "id": 1,
-            "atendidos": 0,
-            "tiempoTotal": 0.0,
-            "nombresAtendidos": []
+            "atendidos": 4,
+            "tiempoTotal": 16.95987319946289,
+            "nombresAtendidos": [
+                "Esteban Gil",
+                "Isabella Mora",
+                "Hernán Torres",
+                "Luis Fernández"
+            ]
         },
         {
             "id": 2,
-            "atendidos": 0,
-            "tiempoTotal": 0.0,
-            "nombresAtendidos": []
+            "atendidos": 4,
+            "tiempoTotal": 12.752888679504395,
+            "nombresAtendidos": [
+                "Gabriela León",
+                "Laura Méndez",
+                "Maria Gomez",
+                "Alejandro Reyes"
+            ]
         },
         {
             "id": 3,
-            "atendidos": 0,
-            "tiempoTotal": 0.0,
-            "nombresAtendidos": []
+            "atendidos": 4,
+            "tiempoTotal": 13.034530639648438,
+            "nombresAtendidos": [
+                "Ricardo Moreno",
+                "Mariana Duarte",
+                "Isabella Mora",
+                "Juan Perez"
+            ]
         },
         {
             "id": 4,
-            "atendidos": 0,
-            "tiempoTotal": 0.0,
-            "nombresAtendidos": []
+            "atendidos": 4,
+            "tiempoTotal": 13.403202056884766,
+            "nombresAtendidos": [
+                "Paola Ríos",
+                "Felipe Castro",
+                "Santiago Peña",
+                "Esteban Gil"
+            ]
         }
     ]
 }

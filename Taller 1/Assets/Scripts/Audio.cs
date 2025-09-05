@@ -6,7 +6,7 @@ public class Audio : MonoBehaviour
     [Header("referencias")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Button SiguienteAudio;
-
+  
     [SerializeField] List<AudioClip> listClips = new List<AudioClip>();
 
     [SerializeField] bool loopPlaylist = true;
@@ -19,13 +19,24 @@ public class Audio : MonoBehaviour
         {
             SiguienteAudio.onClick.AddListener(PlayNext);
         }
+
     }
+
+    public void DetenerAudio()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
+    }
+
     private void OnDestroy()
     {
         if (SiguienteAudio != null)
         {
             SiguienteAudio.onClick.RemoveListener(PlayNext);
         }
+
     }
     public void PlayNext()
     {
