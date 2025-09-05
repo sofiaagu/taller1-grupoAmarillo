@@ -19,9 +19,6 @@ namespace cliente
             this.tiempoAtencion = tiempoAtencion;
         }
 
-       
-        public int GenerarTiempoAtencion;
-
 
     }
     

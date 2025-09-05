@@ -2112,7 +2112,6 @@ MonoBehaviour:
   audioSource: {fileID: 1815389806}
   SiguienteAudio: {fileID: 2004112994}
   listClips:
-  - {fileID: 8300000, guid: f6167eb531396ee4a9af539db3b572aa, type: 3}
   - {fileID: 8300000, guid: 5c21bcb1fb2cf6447a58db0a347ec463, type: 3}
   loopPlaylist: 1
 --- !u!4 &997213301
@@ -2857,10 +2856,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.88
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

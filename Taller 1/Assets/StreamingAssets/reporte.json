@@ -1,43 +1,65 @@
 {
-    "clientesEnCola": 15,
-    "totalConsignaciones": 4,
-    "totalRetiros": 5,
+    "clientesEnCola": 42,
+    "totalConsignaciones": 16,
+    "totalRetiros": 15,
     "cajeros": [
         {
             "id": 1,
-            "atendidos": 3,
-            "tiempoTotal": 10.841985702514649,
+            "atendidos": 10,
+            "tiempoTotal": 30.759796142578126,
             "nombresAtendidos": [
+                "Hernán Torres",
                 "Natalia Suárez",
-                "Tomás Castillo",
-                "Sofía Lozano"
+                "Sara Vargas",
+                "Valentina Ortiz",
+                "Maria Gomez",
+                "Gabriela León",
+                "Paola Ríos",
+                "David Silva",
+                "Felipe Castro",
+                "Felipe Castro"
             ]
         },
         {
             "id": 2,
-            "atendidos": 2,
-            "tiempoTotal": 8.906052589416504,
+            "atendidos": 8,
+            "tiempoTotal": 30.358491897583009,
             "nombresAtendidos": [
-                "Carlos Ruiz",
-                "Sofía Lozano"
+                "Ana Torres",
+                "Andrés López",
+                "Sofía Lozano",
+                "Maria Gomez",
+                "Fernanda Pardo",
+                "Hernán Torres",
+                "Fernanda Pardo",
+                "Paola Ríos"
             ]
         },
         {
             "id": 3,
-            "atendidos": 2,
-            "tiempoTotal": 8.020373344421387,
+            "atendidos": 7,
+            "tiempoTotal": 25.601985931396486,
             "nombresAtendidos": [
-                "Juan Perez",
-                "Juan Perez"
+                "Miguel Ángel",
+                "Camila Soto",
+                "Felipe Castro",
+                "Esteban Gil",
+                "Mateo Ramírez",
+                "Ricardo Moreno",
+                "Sara Vargas"
             ]
         },
         {
             "id": 4,
-            "atendidos": 2,
-            "tiempoTotal": 7.228966236114502,
+            "atendidos": 6,
+            "tiempoTotal": 21.04891586303711,
             "nombresAtendidos": [
-                "Valentina Ortiz",
-                "Alejandro Reyes"
+                "Felipe Castro",
+                "Camila Soto",
+                "Mateo Ramírez",
+                "Laura Méndez",
+                "Ricardo Moreno",
+                "Juan Perez"
             ]
         }
     ]
