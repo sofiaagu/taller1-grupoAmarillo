@@ -164,10 +164,6 @@ public class Cajero : MonoBehaviour
                 Random.Range(2f, 5f) // tiempo de atención aleatorio
             );
 
-            // Asignar un ID secuencial único
-            contadorClientes++;
-            nuevo.idCliente = "C" + contadorClientes.ToString("00");
-
             // Encolar
             colaClientes.Enqueue(nuevo);
 
